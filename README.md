@@ -36,3 +36,7 @@ Create deployment with apache httpd official image:
 
 # Example of How to create a deployment with a service that expose a port
 - `kubectl create -f values/nginx-deployment.yml`
+
+# How to get the yaml file that corresponds to one deployment without creating the deployment
+The `--dry-run` flag indicates that we don't want to create the deployment, and we just want to get the yaml file needed to create that deployment
+- `kubectl create deployment web --image nginx -o yaml --dry-run`
