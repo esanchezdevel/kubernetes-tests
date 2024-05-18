@@ -18,3 +18,13 @@ Add and alias of microk8s.kubectl, that way we just have to type kubectl
 
 **Note:** Restart the PC to make all the changes take effect
 
+# How to create deployments
+Create deployment with nginx official image:
+- `kubectl create deployment my-nginx --image=nginx`
+
+Expose that nginx deployment with a ClusterIP service
+- `kubectl expose deployment my-nginx --port 80`
+
+Create deployment with apache httpd official image:
+- `kubectl create deployment my-httpd --image=httpd`
+
