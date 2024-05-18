@@ -31,3 +31,8 @@ Create deployment with apache httpd official image:
 # How to connect via ssh to one pod
 - `kubectl exec --namespace=<namespace-name> -ti <pod-name> -- bash`
 
+# Example of How to create a pod from a values yaml file
+- `kubectl create -f values/nginx-pod.yml`
+
+# Example of How to create a deployment with a service that expose a port
+- `kubectl create -f values/nginx-deployment.yml`
