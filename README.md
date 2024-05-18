@@ -28,3 +28,6 @@ Expose that nginx deployment with a ClusterIP service
 Create deployment with apache httpd official image:
 - `kubectl create deployment my-httpd --image=httpd`
 
+# How to connect via ssh to one pod
+- `kubectl exec --namespace=<namespace-name> -ti <pod-name> -- bash`
+
