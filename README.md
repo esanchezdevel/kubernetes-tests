@@ -18,8 +18,8 @@ Add and alias of microk8s.kubectl, that way we just have to type kubectl
 - `echo “alias kubectl=’microk8s.kubectl’” >> ~/.bashrc`
 
 If we'll want to connect to external clusters, and we don't need a Kubernetes cluster, we can install the `kubectl` cli tool
-- curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
-- sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+- `curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"`
+- `sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl`
 
 **Note:** Take into account that if you have installed the microk8s and also install the kubectl cli, it's not needed to add the alias microk8s.kubectl to kubectl, because kubectl will works directly.
 But the config used by kubectl is different than the one used by microk8s.
