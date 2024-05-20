@@ -30,6 +30,11 @@ To validate that new configuration is added, we can execute the following comman
 Also we can execute the following command to check which context we are using now:
 - `kubectl config current-context`
 
+To switch between clusters, we can use the context name references. For example, if we have one context with name `cluster-02` that points to one remote cluster, we can execute the following command:
+- `kubectl config use-context cluster-02`
+
+And after execute that command, all the kubectl commands will be executed over that cluster
+
 ### How to create deployments
 Create deployment with nginx official image:
 - `kubectl create deployment my-nginx --image=nginx`
