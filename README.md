@@ -1,7 +1,7 @@
 # kubernetes-tests
 Project to store all things related to my Kubernetes tests
 
-# How to install kubernetes in Linux
+### How to install kubernetes in Linux
 To install Kubernetes in Linux we have to install `microk8s` using snap, following these steps:
 
 Install snapd:
@@ -18,7 +18,19 @@ Add and alias of microk8s.kubectl, that way we just have to type kubectl
 
 **Note:** Restart the PC to make all the changes take effect
 
-# How to create deployments
+### How to configure Kubeconfig to connect to remote clusters
+Usually we can put the `config` file on the path `~/.kube` with the configuration that we want.
+But when we have microk8s installed, microk8s is taking the configuration from the file:
+`/var/snap/microk8s/current/credentials/client.config`
+So we'll need to add the new configuration into that file.
+
+To validate that new configuration is added, we can execute the following command:
+- `kubectl config get-contexts -o=name`
+
+Also we can execute the following command to check which context we are using now:
+- `kubectl config current-context`
+
+### How to create deployments
 Create deployment with nginx official image:
 - `kubectl create deployment my-nginx --image=nginx`
 
@@ -28,15 +40,15 @@ Expose that nginx deployment with a ClusterIP service
 Create deployment with apache httpd official image:
 - `kubectl create deployment my-httpd --image=httpd`
 
-# How to connect via ssh to one pod
+### How to connect via ssh to one pod
 - `kubectl exec --namespace=<namespace-name> -ti <pod-name> -- bash`
 
-# Example of How to create a pod from a values yaml file
+### Example of How to create a pod from a values yaml file
 - `kubectl create -f values/nginx-pod.yml`
 
-# Example of How to create a deployment with a service that expose a port
+### Example of How to create a deployment with a service that expose a port
 - `kubectl create -f values/nginx-deployment.yml`
 
-# How to get the yaml file that corresponds to one deployment without creating the deployment
+### How to get the yaml file that corresponds to one deployment without creating the deployment
 The `--dry-run` flag indicates that we don't want to create the deployment, and we just want to get the yaml file needed to create that deployment
 - `kubectl create deployment web --image nginx -o yaml --dry-run`
