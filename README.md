@@ -65,3 +65,8 @@ Create deployment with apache httpd official image:
 ### How to get the yaml file that corresponds to one deployment without creating the deployment
 The `--dry-run` flag indicates that we don't want to create the deployment, and we just want to get the yaml file needed to create that deployment
 - `kubectl create deployment web --image nginx -o yaml --dry-run`
+
+### How to check the CPU usage of all the pods in the system
+This command is useful to calculate how much CPU is consumed, when you are getting errors of insufficient CPUs for deploy pods
+- `kubectl describe nodes`
+
