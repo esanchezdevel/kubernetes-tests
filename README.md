@@ -70,3 +70,15 @@ The `--dry-run` flag indicates that we don't want to create the deployment, and 
 This command is useful to calculate how much CPU is consumed, when you are getting errors of insufficient CPUs for deploy pods
 - `kubectl describe nodes`
 
+---
+
+# Helm Commands
+Helm is a package manager that helps to install kubernetes pods.
+The packages contains Charts and to understand it, the Charts can be considered as the equivalents to the Pods in the Helm world.
+
+### List all releases
+- `helm list`
+
+### Create a Helm package
+Go to the directory that contains the charts configurations
+- `helm package <directory>`
